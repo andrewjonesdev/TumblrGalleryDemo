@@ -158,7 +158,7 @@ public class DataLoader implements CommandLineRunner {
                 }*/
                 String[] url = vid.split("/");
                 vid = "https://vtt.tumblr.com/" + url[url.length - 1] + ".mp4";
-                System.out.println("https://vtt.tumblr.com/" + url[url.length - 1] + ".mp4");
+                System.out.println("https://vtt.tumblr.com/" + url[url.length - 2] + ".mp4");
                 //System.out.println();
 
                 Video video = new Video("Jess Video #" + (reverseCount - 1) + "!",
@@ -207,7 +207,7 @@ public class DataLoader implements CommandLineRunner {
         driver = new PhantomJSDriver(desiredCaps);
         driver.manage().window().setSize(new Dimension(1920, 1080));
     }
- 
+
     public static void initChrome() {
         desiredCaps = new DesiredCapabilities();
         desiredCaps.setJavascriptEnabled(false);
