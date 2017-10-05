@@ -207,7 +207,7 @@ public class DataLoader implements CommandLineRunner {
         driver = new PhantomJSDriver(desiredCaps);
         driver.manage().window().setSize(new Dimension(1920, 1080));
     }
-
+ 
     public static void initChrome() {
         desiredCaps = new DesiredCapabilities();
         desiredCaps.setJavascriptEnabled(false);
