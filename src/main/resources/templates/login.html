@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<!--
+	Full Motion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en" xmlns:th="www.thymeleaf.org " xmlns:sec="www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+    <title>Andrew's Login</title>
+    <th:block th:replace="index :: head"></th:block>
+</head>
+<body id="top">
+
+<!-- Banner -->
+<!--
+    To use a video as your background, set data-video to the name of your video without
+    its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+    formats to work correctly.
+-->
+<section id="banner" data-video="https://vtt.tumblr.com/tumblr_oxc4ox61ch1wdxzh4" >
+<th:block th:replace="index :: jumbotron"></th:block>
+</section>
+
+<!-- Main -->
+<div id="main">
+    <div class="inner">
+
+        <!-- <video width="320" height="240" controls>
+        <source th:src="${'images/'+{v.vidUrl}}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video> -->
+
+        <!-- Boxes -->
+
+
+                <div class="starter-template">
+                </div>
+                <br />
+                <div th:if="${param.error}">
+                    Invalid username and password.
+                </div>
+                <div th:if="${param.logout}">
+                    You have been logged out.
+                </div>
+                <form th:action="@{/login}" method="post">
+                    <div><label> Email : <input type="text" name="username"/> </label></div>
+                    <div><label> Password: <input type="password" name="password"/> </label></div>
+                    <div><input type="submit" value="Sign In"/></div>
+                </form>
+
+
+    </div>
+</div>
+
+<!-- Footer -->
+<th:block th:replace="index :: footer"></th:block>
+
+<!-- Scripts -->
+<th:block th:replace="index :: footlinks"></th:block>
+
+</body>
+</html>

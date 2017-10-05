@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<!--
+	Full Motion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en" xmlns:th="www.thymeleaf.org " xmlns:sec="www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+	<head>
+		<title>Andrew's World</title>
+		<th:block th:fragment="head">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+			<link rel="apple-touch-icon" sizes="57x57" href="https://s3.us-east-2.amazonaws.com/gallery-demo/static/images/apple-icon-57x57.png">
+			<link rel="apple-touch-icon" sizes="60x60" href="https://s3.us-east-2.amazonaws.com/gallery-demo/static/images/apple-icon-60x60.png">
+			<link rel="apple-touch-icon" sizes="72x72" href="https://s3.us-east-2.amazonaws.com/gallery-demo/static/images/apple-icon-72x72.png">
+			<link rel="apple-touch-icon" sizes="76x76" href="https://s3.us-east-2.amazonaws.com/gallery-demo/static/images/apple-icon-76x76.png">
+			<link rel="apple-touch-icon" sizes="114x114" href="https://s3.us-east-2.amazonaws.com/gallery-demo/static/images/apple-icon-114x114.png">
+			<link rel="apple-touch-icon" sizes="120x120" href="https://s3.us-east-2.amazonaws.com/gallery-demo/static/images/apple-icon-120x120.png">
+			<link rel="apple-touch-icon" sizes="144x144" href="https://s3.us-east-2.amazonaws.com/gallery-demo/static/images/apple-icon-144x144.png">
+			<link rel="apple-touch-icon" sizes="152x152" href="https://s3.us-east-2.amazonaws.com/gallery-demo/static/images/apple-icon-152x152.png">
+			<link rel="apple-touch-icon" sizes="180x180" href="https://s3.us-east-2.amazonaws.com/gallery-demo/static/images/apple-icon-180x180.png">
+			<link rel="icon" type="image/png" sizes="192x192"  href="https://s3.us-east-2.amazonaws.com/gallery-demo/static/images/android-icon-192x192.png">
+			<link rel="icon" type="image/png" sizes="32x32" href="https://s3.us-east-2.amazonaws.com/gallery-demo/static/images/favicon-32x32.png">
+			<link rel="icon" type="image/png" sizes="96x96" href="https://s3.us-east-2.amazonaws.com/gallery-demo/static/images/favicon-96x96.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="https://s3.us-east-2.amazonaws.com/gallery-demo/static/images/favicon-16x16.png">
+			<link rel="manifest" href="/manifest.json">
+			<meta name="msapplication-TileColor" content="#ffffff">
+			<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+			<meta name="theme-color" content="#ffffff">
+			<link rel="manifest" href="/manifest.json">
+			<meta name="msapplication-TileColor" content="#ffffff">
+			<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+			<meta name="theme-color" content="#ffffff">
+		</th:block>
+	</head>
+	<body id="top">
+
+			<!-- Banner -->
+			<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+				<section id="banner" data-video="https://vtt.tumblr.com/tumblr_oxc39bn1aw1wdxzh4" >
+					<div th:fragment="jumbotron" class="inner">
+						<header>
+
+							<h1>Andrew's World</h1>
+							<p><a href="/"><b th:if="${{page}.equals({home})}">Home</b><span style="text-decoration: none" th:if="${!{page}.equals({home})}">Home</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a sec:authorize="isAnonymous()" href="/login"><b th:if="${{page}.equals({login})}">Login</b><span style="text-decoration: none" th:if="${!{page}.equals({login})}">Login</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a sec:authorize="isAuthenticated()" href="/logout">Logout</a><a sec:authorize="isAnonymous()" href="/register"><b th:if="${{page}.equals({register})}">Register</b><span style="text-decoration: none" th:if="${!{page}.equals({register})}">Register</span></a></p>
+
+							<p>A Sample Portfolio for Artists<br />
+							</p>
+
+						</header>
+						<a href="#main" class="more">Learn More</a>
+					</div>
+				</section>
+
+			<!-- Main -->
+				<div id="main">
+					<div class="inner">
+
+						<!-- <video width="320" height="240" controls>
+						<source th:src="${'images/'+{v.vidUrl}}" type="video/mp4">
+						Your browser does not support the video tag.
+					</video> -->
+
+					<!-- Boxes -->
+						<div class="thumbnails">
+
+							<div class="box" th:each="v : ${videos}">
+								<a th:href="${v.picUrl}" class="image fit"><img th:src="${v.picUrl}" alt="" /></a>
+								<div class="inner">
+									<h3 th:text="${v.videoName}">Nascetur nunc varius commodo</h3>
+									<p th:text="${v.videoDescription}">Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+									<a th:href="${v.vidUrl}" class="button fit" data-poptrox="iframe, 714x714">Watch</a>
+								</div>
+							</div>
+
+
+
+						</div>
+
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer th:fragment="footer" id="footer">
+					<div class="inner">
+						<h2>Andrew's World</h2>
+						<p>A Sample Porfolio for Artists<br /></p>
+
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED and AndrewJonesDev</a>. Images: <a href=#>Andrew D. Jones</a>. Videos: <a href="#">Andrew D. Jones</a>.</p>
+					</div>
+				</footer>
+
+		<!-- Scripts -->
+			<th:block th:fragment="footlinks">
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script th:src="@{assets/js/main.js}"></script>
+			</th:block>
+
+	</body>
+</html>
