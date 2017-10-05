@@ -157,7 +157,7 @@ public class DataLoader implements CommandLineRunner {
                     }
                 }*/
                 String[] url = vid.split("/");
-                vid = "https://vtt.tumblr.com/" + url[url.length - 1] + ".mp4";
+                vid = "https://vtt.tumblr.com/" + url[url.length - 2] + ".mp4";
                 System.out.println("https://vtt.tumblr.com/" + url[url.length - 2] + ".mp4");
                 //System.out.println();
 
