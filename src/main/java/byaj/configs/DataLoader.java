@@ -161,7 +161,7 @@ public class DataLoader implements CommandLineRunner {
                 System.out.println("https://vtt.tumblr.com/" + url[url.length - 2] + ".mp4");
                 //System.out.println();
 
-                Video video = new Video("Jess Video #" + (reverseCount - 1) + "!",
+                Video video = new Video("Andrew's World #" + (reverseCount) + "!",
                         "New!",
                         pic, pic, pic,
                         vid, vid, vid);
